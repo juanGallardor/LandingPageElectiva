@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The AI workspace that works for you. | Notion</title>
+  <meta name="description" content="Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  ESTRUCTURA DE CARPETAS DEL PROYECTO                         ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  /                                                           ║
+  ║  ├── index.html                                              ║
+  ║  ├── css/                                                    ║
+  ║  │   └── styles.css                                         ║
+  ║  ├── js/                                                     ║
+  ║  │   └── main.js                                            ║
+  ║  └── public/                                                 ║
+  ║      └── images/                                             ║
+  ║          ├── logos/     ← logos de empresas partners         ║
+  ║          │   ├── figma.png                                  ║
+  ║          │   ├── openai.png                                 ║
+  ║          │   ├── ramp.png                                   ║
+  ║          │   ├── cursor.png                                 ║
+  ║          │   ├── vercel.png                                 ║
+  ║          │   ├── nvidia.png                                 ║
+  ║          │   ├── volvo.png                                  ║
+  ║          │   └── perplexity.png                             ║
+  ║          ├── hero/                                           ║
+  ║          │   ├── avatars-row.png   ← fila de avatares       ║
+  ║          │   └── app-screenshot.png ← mockup de Acme Inc.   ║
+  ║          ├── features/                                       ║
+  ║          │   ├── notion-agent-demo.png                      ║
+  ║          │   ├── custom-agents-ui.png                       ║
+  ║          │   ├── enterprise-search.png                      ║
+  ║          │   ├── ai-meeting-notes.png                       ║
+  ║          │   ├── flexible-workflows.png                     ║
+  ║          │   └── openai-video-thumb.jpg                     ║
+  ║          └── try/                                            ║
+  ║              ├── notion-mail-ui.png                         ║
+  ║              ├── design-system.png                          ║
+  ║              └── notion-calendar-ui.png                     ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav__inner">
+
+    <!-- Logo -->
+    <a href="/" class="nav__logo">
+      <svg width="24" height="25" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.8051 3.26755L20.5301 2.04319C22.5839 1.86808 23.1124 1.98538 24.4032 2.91756L29.7421 6.64773C30.623 7.28917 30.9165 7.46381 30.9165 8.16307V28.6217C30.9165 29.9038 30.4468 30.6622 28.804 30.7782L9.38138 31.9442C8.14825 32.0027 7.56135 31.8279 6.91556 31.0114L2.98395 25.9405C2.27947 25.0072 1.98651 24.3088 1.98651 23.4918V5.3068C1.98651 4.25826 2.45649 3.38366 3.8051 3.26755Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096Z" fill="black"/>
+      </svg>
+      Notion
+    </a>
+
+    <!-- Links -->
+    <div class="nav__links">
+      <button class="nav__link-btn">Product
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav__link-btn">AI
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav__link-btn">Solutions
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav__link-btn">Resources
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="nav__link-a">Enterprise</a>
+      <a href="#" class="nav__link-a">Pricing</a>
+      <a href="#" class="nav__link-a">Request a demo</a>
+    </div>
+
+    <!-- Right buttons -->
+    <div class="nav__right">
+      <button class="btn-login">Log in</button>
+      <button class="btn-primary">Get Notion free</button>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+
+  <div class="hero__avatars">
+    <img
+      src="public/images/hero/avatars-row.png"
+      alt="Notion AI agent avatars"
+      width="420"
+      height="110"
+    />
+  </div>
+
+  <h1 class="hero__title">One workspace.<br>Zero busywork.</h1>
+  <p class="hero__subtitle">
+    Notion is where your teams and AI agents capture knowledge,
+    find answers, and automate projects. Now a team of 7 feels like 70.
+  </p>
+
+  <div class="hero__btns">
+    <button class="btn-hero-primary">Get Notion free</button>
+    <button class="btn-hero-secondary">Request a demo</button>
+  </div>
+
+  <!--
+    IMAGEN: public/images/hero/app-screenshot.png
+    Captura completa de la UI de Notion con la página "Acme Inc."
+    abierta y el panel de AI a la derecha.
+    Tamaño sugerido: 1800px × 840px.
+  -->
+  <div class="hero__mockup">
+    <video
+        src="public/images/hero/video1.mp4"
+        width="900"
+        height="420"
+        autoplay
+        muted
+        loop
+        playsinline
+    ></video>
+    </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     TRUSTED BY TOP TEAMS
+     (continúa visualmente con el hero)
+     ═══════════════════════════════════════════════════ -->
+<div class="trusted-bar">
+  <div class="trusted-bar__inner">
+    <span class="trusted-bar__label">Trusted by top teams</span>
+    <div class="trusted-bar__logos">
+      <!--
+        Logos: public/images/logos/*.png
+        Usar versión en negro/gris del logo. El CSS ya aplica grayscale.
+        Altura display recomendada: 18–22px.
+      -->
+      <img src="public/images/logos/figma.png"      alt="Figma"      height="20"/>
+      <img src="public/images/logos/openai.png"     alt="OpenAI"     height="18"/>
+      <img src="public/images/logos/ramp.png"       alt="Ramp"       height="18"/>
+      <img src="public/images/logos/cursor.png"     alt="Cursor"     height="18"/>
+      <img src="public/images/logos/vercel.png"     alt="Vercel"     height="18"/>
+      <img src="public/images/logos/nvidia.png"     alt="NVIDIA"     height="20"/>
+      <img src="public/images/logos/volvo.png"      alt="Volvo"      height="16"/>
+      <img src="public/images/logos/perplexity.png" alt="Perplexity" height="18"/>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     INTRODUCING NOTION 3.0
+     ═══════════════════════════════════════════════════ -->
+<div class="section-gray">
+  <div class="section__inner">
+
+    <h2 class="intro__title">Introducing Notion 3.0</h2>
+
+    <!-- ── Notion Agent ── -->
+    <div class="feature-card">
+      <div class="feature-card__left">
+        <div class="feature-tag">
+          Notion Agent
+          <span class="badge badge--new">New</span>
+        </div>
+        <h2 class="feature-card__title">
+          You assign the tasks. Your Notion Agent does the work.
+        </h2>
+
+        <!-- Flecha con padding arriba y abajo -->
+        <button class="arrow-btn" aria-label="Learn more">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </button>
+
+        <div class="feature-sub-list">
+          <div class="feature-sub-item">
+            <div class="feature-sub-item__title">Hand off your busywork</div>
+            <div class="feature-sub-item__desc">
+              What used to take days in minutes. Tell it your goal and watch it work.
+            </div>
+          </div>
+          <div class="feature-sub-item">
+            <div class="feature-sub-item__title">Collaborates with your team</div>
+          </div>
+          <div class="feature-sub-item">
+            <div class="feature-sub-item__title">Knows everything you know</div>
+          </div>
+          <div class="feature-sub-item">
+            <div class="feature-sub-item__title">Personalized to you</div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        IMAGEN: public/images/features/notion-agent-demo.png
+        Captura del Bug tracker con el panel de AI respondiendo.
+        Fondo azul/teal con la ventana de Notion Agent.
+        Tamaño sugerido: 800px × 500px.
+      -->
+      <div class="feature-card__right">
+        <img
+          src="public/images/features/notion-agent-demo.png"
+          alt="Notion Agent — Bug tracker demo"
+        />
+      </div>
+    </div>
+
+    <!-- ── Custom Agents ── -->
+    <div class="feature-card">
+      <div class="feature-card__left">
+        <div class="feature-tag">
+          Custom Agents
+          <span class="badge badge--soon">Coming soon</span>
+        </div>
+        <h2 class="feature-card__title">Automate repetitive tasks.</h2>
+        <button class="arrow-btn" aria-label="Learn more">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </button>
+      </div>
+
+      <!--
+        IMAGEN: public/images/features/custom-agents-ui.png
+        Pantalla oscura con el listado de agentes (Office Buddy,
+        Dylan's Daily Summary, Email Reviewer, Sales Prep) y el
+        panel derecho de "Dylan's Daily Summary".
+        Tamaño sugerido: 800px × 400px.
+      -->
+      <div class="feature-card__right">
+        <img
+          src="public/images/features/custom-agents-ui.png"
+          alt="Custom Agents — Dylan's Daily Summary"
+        />
+      </div>
+    </div>
+
+    <!-- ── Enterprise Search + AI Meeting Notes (2 columnas) ── -->
+    <div class="feature-grid-2">
+
+      <!-- Enterprise Search -->
+      <div class="feature-small-card">
+        <div class="feature-small-card__header">
+          <div class="feature-tag feature-tag--gray">Enterprise Search</div>
+          <h3>One search for everything.</h3>
+          <button class="arrow-btn" aria-label="Learn more">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </button>
+        </div>
+        <!--
+          IMAGEN: public/images/features/enterprise-search.png
+          UI de búsqueda con "Mobile team projects" y resultados
+          de Notion, Slack, Jira, GitHub.
+          Tamaño sugerido: 600px × 320px.
+        -->
+        <div class="feature-small-card__img">
+          <img
+            src="public/images/features/enterprise-search.png"
+            alt="Enterprise Search UI"
+          />
+        </div>
+      </div>
+
+      <!-- AI Meeting Notes -->
+      <div class="feature-small-card">
+        <div class="feature-small-card__header">
+          <div class="feature-tag feature-tag--gray">AI Meeting Notes</div>
+          <h3>Perfect notes, every time.</h3>
+          <button class="arrow-btn" aria-label="Learn more">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </button>
+        </div>
+        <!--
+          IMAGEN: public/images/features/ai-meeting-notes.png
+          UI del resumen de "Sales meeting @Today" con transcript
+          y el ícono de micrófono/gráfica.
+          Tamaño sugerido: 600px × 320px.
+        -->
+        <div class="feature-small-card__img">
+          <img
+            src="public/images/features/ai-meeting-notes.png"
+            alt="AI Meeting Notes — Sales meeting"
+          />
+        </div>
+      </div>
+
+    </div><!-- /feature-grid-2 -->
+
+    <!-- ── Flexible Workflows ── -->
+    <div class="feature-card">
+      <div class="feature-card__left">
+        <div class="feature-tag feature-tag--gray">Flexible workflows</div>
+        <h2 class="feature-card__title">Manage any project, big or small.</h2>
+        <button class="arrow-btn" aria-label="Learn more">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </button>
+      </div>
+
+      <!--
+        IMAGEN: public/images/features/flexible-workflows.png
+        Captura del "Company HQ" (left) y el kanban "Roadmap"
+        con columnas Exploring / Building / Complete.
+        Fondo beige/tan.
+        Tamaño sugerido: 800px × 400px.
+      -->
+      <div class="feature-card__right">
+        <img
+          src="public/images/features/flexible-workflows.png"
+          alt="Flexible workflows — Company HQ and Roadmap"
+        />
+      </div>
+    </div>
+
+  </div>
+</div><!-- /section-gray (Introducing) -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     QUOTE — FORBES
+     ═══════════════════════════════════════════════════ -->
+<div class="quote-section">
+  <p class="quote-section__text">"Your AI everything app."</p>
+  <p class="quote-section__source">Forbes</p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     MORE PRODUCTIVITY. FEWER TOOLS.
+     ═══════════════════════════════════════════════════ -->
+<div class="productivity">
+  <div class="productivity__inner">
+
+    <!-- Header: texto + íconos tachados -->
+    <div class="productivity__header">
+      <div>
+        <h2 class="productivity__title">More productivity.<br>Fewer tools.</h2>
+        <p class="productivity__desc">Bring all your tools and teams under one roof. Calculate savings below.</p>
+        <a href="#" class="productivity__link">See pricing plans →</a>
+      </div>
+      <div>
+        <!-- Fila de íconos de herramientas con línea tachada -->
+        <div class="tools-row">
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.37 18a19.5 19.5 0 0 1-4.85-4.85A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="tool-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <!-- Línea que atraviesa los íconos -->
+          <div class="tools-row__line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculadora — ancho completo -->
+    <div class="calc-card">
+      <div class="calc-card__grid">
+        <!-- Col 1 -->
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="ai-search"> AI Search
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="ai-chatbot" checked> AI Chatbot <span class="price">$20/user</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="ai-meetings"> AI Meeting Notes
+        </label>
+
+        <!-- Col 2 -->
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="ai-writing"> AI Writing Assistant
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="ai-email"> AI Email App
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="ai-research"> AI Research
+        </label>
+
+        <!-- Col 3 -->
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="cal-scheduling"> Calendar Scheduling
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="team-wiki" checked> Team Wiki <span class="price">$10/user</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="pm-tool" checked> Project Management Tool <span class="price">$24/user</span>
+        </label>
+
+        <!-- Col 4 -->
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="basic-crm"> Basic CRM
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="site-builder"> Site Builder
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-tool="forms"> Forms
+        </label>
+      </div>
+
+      <div class="calc-card__results">
+        <div class="calc-item">
+          <label for="team-size">Team size</label>
+          <input
+            id="team-size"
+            type="number"
+            class="calc-item__input"
+            value="10"
+            min="1"
+            max="10000"
+          />
+        </div>
+        <div class="calc-item">
+          <label>Monthly savings</label>
+          <div class="calc-item__value" data-calc="monthly">$340</div>
+        </div>
+        <div class="calc-item">
+          <label>Annual savings</label>
+          <div class="calc-item__value" data-calc="annual">$4,080</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /productivity -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     TRUSTED BY TEAMS THAT SHIP
+     ═══════════════════════════════════════════════════ -->
+<div class="trusted-section">
+  <div class="trusted-section__inner">
+
+    <h2 class="trusted-section__title">Trusted by teams that ship.</h2>
+
+    <!-- OpenAI — testimonial destacado -->
+    <div class="testimonial-featured">
+      <div>
+        <div class="testimonial-featured__company">OpenAI</div>
+        <p class="testimonial-featured__quote">
+          "There's power in a single platform where you can do all your work.
+          Notion is that single place."
+        </p>
+        <a href="#" class="testimonial-featured__link">Read the full story →</a>
+      </div>
+      <!--
+        IMAGEN: public/images/features/openai-video-thumb.jpg
+        Captura del video testimonial de OpenAI (hombre con laptop).
+        Tamaño sugerido: 560px × 400px.
+      -->
+      <div class="testimonial-featured__img">
+        <img
+          src="public/images/features/openai-video-thumb.jpg"
+          alt="OpenAI testimonial video"
+        />
+      </div>
+    </div>
+
+    <!-- Fila 1: Toyota, Ramp, Vercel -->
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-card__company" style="color:#eb0a1e;letter-spacing:1px;">TOYOTA</div>
+        <p class="testimonial-card__text">
+          Streamlined workflows to reduce timelines by 3x.
+          <a href="#" class="testimonial-card__link"> →</a>
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__company">
+          <svg width="56" height="20" viewBox="0 0 56 20"><text x="0" y="15" font-size="14" font-weight="700" fill="#111" font-family="sans-serif">ramp</text></svg>
+        </div>
+        <p class="testimonial-card__text">
+          "With Notion, every person at Ramp has an AI agent."
+          <a href="#" class="testimonial-card__link"> →</a>
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__company">
+          <svg width="72" height="20" viewBox="0 0 72 20"><text x="0" y="15" font-size="13" font-weight="700" fill="#111" font-family="sans-serif">▲ Vercel</text></svg>
+        </div>
+        <p class="testimonial-card__text">
+          "Notion understands that you can solve a lot of problems with one tool."
+          <a href="#" class="testimonial-card__link"> →</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Fila 2: MatchGroup, Cursor, Figma -->
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-card__company" style="color:#00a94f;">MatchGroup</div>
+        <p class="testimonial-card__text">
+          "Notion has been the most powerful and impactful way to streamline our workflow."
+          <a href="#" class="testimonial-card__link"> →</a>
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__company">
+          <svg width="90" height="20" viewBox="0 0 90 20"><text x="0" y="15" font-size="12" font-weight="800" fill="#111" font-family="sans-serif">▲ CURSOR</text></svg>
+        </div>
+        <p class="testimonial-card__text">
+          "Using the most AI-native tools like Notion is an important competitive advantage for us."
+          <a href="#" class="testimonial-card__link"> →</a>
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__company" style="color:#f24e1e;">
+          <svg width="60" height="20" viewBox="0 0 60 20"><text x="0" y="15" font-size="14" font-weight="700" fill="#f24e1e" font-family="sans-serif">Figma</text></svg>
+        </div>
+        <p class="testimonial-card__text">
+          One hub for work and AI keeps everyone informed and work flowing.
+          <a href="#" class="testimonial-card__link"> →</a>
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /trusted-section__inner -->
+
+  <!-- Stats bar — pegada, baja opacidad, SIN padding extra -->
+  <div class="stats-bar">
+    <div class="stats-bar__inner">
+      <div class="stat-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        #1 knowledge base 3 years running (G2)
+      </div>
+      <div class="stat-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        #1 AI enterprise search (G2)
+      </div>
+      <div class="stat-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        #1 rated AI writing (G2)
+      </div>
+      <div class="stat-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        62% of Fortune 100
+      </div>
+      <div class="stat-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Over 50% of YC companies
+      </div>
+      <div class="stat-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        1.4M+ communities
+      </div>
+    </div>
+  </div>
+
+</div><!-- /trusted-section -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     LET NOTION AI HANDLE THE BUSYWORK
+     ═══════════════════════════════════════════════════ -->
+<div class="ai-section">
+  <div class="ai-section__inner">
+
+    <div class="ai-section__header">
+      <div>
+        <h2 class="ai-section__title">Let Notion AI handle the busywork.</h2>
+        <p class="ai-section__desc">Pick a use case to see how Notion does the work for you.</p>
+        <a href="#" class="ai-section__link">Explore more →</a>
+      </div>
+      <!--
+        IMAGEN: public/images/hero/avatars-row.png  (misma imagen o variante)
+        Fila de avatares circulares ilustrados (versión más pequeña).
+        Tamaño sugerido: 340px × 90px.
+      -->
+      <div class="ai-section__avatars">
+        <img
+          src="public/images/hero/avatars-row.png"
+          alt="Notion AI use case avatars"
+          width="340"
+        />
+      </div>
+    </div>
+
+    <!-- Use case cards — íconos SVG grises -->
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <span>Go from brainstorm to roadmap →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </div>
+        <span>Turn meetings into social posts →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <span>Organize your workspace →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <span>Onboard a new hire →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <span>Revise a landing page →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <span>Plan an offsite →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+        <span>Track favorite restaurants →</span>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <span>Transform notes into tasks →</span>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /ai-section -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     TRY FOR FREE
+     ═══════════════════════════════════════════════════ -->
+<div class="try-section">
+  <div class="try-section__inner">
+
+    <h2 class="try-section__title">Try for free.</h2>
+
+    <div class="try-grid">
+
+      <!-- ── Get started on Notion ── -->
+      <div class="try-card">
+        <div class="try-card__content">
+          <div class="try-card__icon">
+            <div style="width:50px;height:50px;border-radius:9px;border:2px solid #222;display:flex;align-items:center;justify-content:center;background:white;">
+              <svg width="28" height="29" viewBox="0 0 33 34" fill="none">
+                <path d="M3.8051 3.26755L20.5301 2.04319C22.5839 1.86808 23.1124 1.98538 24.4032 2.91756L29.7421 6.64773C30.623 7.28917 30.9165 7.46381 30.9165 8.16307V28.6217C30.9165 29.9038 30.4468 30.6622 28.804 30.7782L9.38138 31.9442C8.14825 32.0027 7.56135 31.8279 6.91556 31.0114L2.98395 25.9405C2.27947 25.0072 1.98651 24.3088 1.98651 23.4918V5.3068C1.98651 4.25826 2.45649 3.38366 3.8051 3.26755Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096Z" fill="black"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="try-card__title">Get started on Notion</h3>
+          <p class="try-card__desc">Your AI workspace with built-in agents.</p>
+          <!-- Download for Windows (arriba) -->
+          <button class="btn-download-windows">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            Download for Windows
+          </button>
+          <!-- Microsoft Store (abajo, más grande) -->
+          <button class="btn-download-store">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="0"   y="0"   width="10" height="10" fill="white" opacity="0.9"/>
+              <rect x="12"  y="0"   width="10" height="10" fill="white"/>
+              <rect x="0"   y="12"  width="10" height="10" fill="white" opacity="0.7"/>
+              <rect x="12"  y="12"  width="10" height="10" fill="white" opacity="0.85"/>
+            </svg>
+            <div class="btn-download-store__text">
+              <span>Download from the</span>
+              <strong>Microsoft Store</strong>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Notion Mail ── -->
+      <div class="try-card">
+        <div class="try-card__content">
+          <div class="try-card__icon">
+            <div style="width:50px;height:50px;border-radius:9px;background:#e8f3ff;display:flex;align-items:center;justify-content:center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2383e2" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </div>
+          </div>
+          <h3 class="try-card__title">Notion Mail</h3>
+          <p class="try-card__desc">The AI inbox that thinks like you.</p>
+          <button class="btn-download-outline">Download</button>
+        </div>
+        <!--
+          IMAGEN: public/images/try/notion-mail-ui.png
+          Captura del inbox de Notion Mail con sidebar de vistas
+          (Inbox, Important, Recruiting, Calendar, Support)
+          y lista de contactos a la derecha.
+          Tamaño sugerido: 600px × 280px.
+        -->
+        <div class="try-card__img">
+          <img
+            src="public/images/try/notion-mail-ui.png"
+            alt="Notion Mail interface"
+          />
+        </div>
+      </div>
+
+      <!-- ── Design System ── -->
+      <div class="try-card">
+        <!--
+          IMAGEN: public/images/try/design-system.png
+          Ilustración estilo japonés (pintura ukiyo-e) con un pato/pájaro
+          y árboles. Fondo beige cálido.
+          Tamaño sugerido: 600px × 240px.
+        -->
+        <div class="try-card__img" style="min-height:220px;">
+          <img
+            src="public/images/try/design-system.png"
+            alt="Design system illustration"
+            style="width:100%;height:220px;object-fit:cover;"
+          />
+        </div>
+        <div class="try-card__content">
+          <div class="try-card__icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2383e2" stroke-width="1.5"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 20h9M12 20a5 5 0 0 1-5-5V9"/></svg>
+          </div>
+          <h3 class="try-card__title">Design system</h3>
+          <p class="try-card__desc">
+            This design system provides guidelines, components, and tools
+            to ensure consistency and efficiency in digital product development.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Notion Calendar ── -->
+      <div class="try-card">
+        <div class="try-card__content">
+          <div class="try-card__icon">
+            <div style="width:50px;height:50px;border-radius:9px;background:#f0f4ff;display:flex;align-items:center;justify-content:center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2383e2" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+          </div>
+          <h3 class="try-card__title">Notion Calendar</h3>
+          <p class="try-card__desc">Time, scheduling, tasks—all together.</p>
+          <button class="btn-download-outline">Download</button>
+        </div>
+        <!--
+          IMAGEN: public/images/try/notion-calendar-ui.png
+          Captura de "Meeting with Stephanie Lee" con mini-calendario
+          de octubre 2025 y eventos a la derecha (5:00pm, 7:00pm).
+          Tamaño sugerido: 600px × 280px.
+        -->
+        <div class="try-card__img">
+          <img
+            src="public/images/try/notion-calendar-ui.png"
+            alt="Notion Calendar interface"
+          />
+        </div>
+      </div>
+
+    </div><!-- /try-grid -->
+
+    <p class="try-section__note">
+      Notion is always at home right <a href="#">in your browser</a>.
+    </p>
+
+  </div>
+</div><!-- /try-section -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer__inner">
+    <div class="footer__top">
+
+      <!-- Brand column -->
+      <div>
+        <div class="footer__logo">
+          <div class="footer__logo-icon">
+            <svg width="20" height="20" viewBox="0 0 33 34" fill="none">
+              <path d="M3.8051 3.26755L20.5301 2.04319C22.5839 1.86808 23.1124 1.98538 24.4032 2.91756L29.7421 6.64773C30.623 7.28917 30.9165 7.46381 30.9165 8.16307V28.6217C30.9165 29.9038 30.4468 30.6622 28.804 30.7782L9.38138 31.9442C8.14825 32.0027 7.56135 31.8279 6.91556 31.0114L2.98395 25.9405C2.27947 25.0072 1.98651 24.3088 1.98651 23.4918V5.3068C1.98651 4.25826 2.45649 3.38366 3.8051 3.26755Z" fill="white"/>
+              <path fill-rule="evenodd" d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165Z" fill="black"/>
+            </svg>
+          </div>
+          Notion
+        </div>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="X / Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M4 20L20 4"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </a>
+        </div>
+        <button class="footer__lang-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          English (US)
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">About us</a>
+        <a href="#">Careers</a>
+        <a href="#">Security</a>
+        <a href="#">Status</a>
+        <a href="#">Terms & privacy</a>
+        <a href="#">Your privacy rights</a>
+      </div>
+
+      <!-- Download -->
+      <div class="footer__col">
+        <h4>Download</h4>
+        <a href="#">iOS & Android</a>
+        <a href="#">Mac & Windows</a>
+        <a href="#">Mail</a>
+        <a href="#">Calendar</a>
+        <a href="#">Web Clipper</a>
+      </div>
+
+      <!-- Resources -->
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <a href="#">Help center</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
+        <a href="#">Community</a>
+        <a href="#">Integrations</a>
+        <a href="#">Templates</a>
+        <a href="#">Partner programs</a>
+      </div>
+
+      <!-- Notion for -->
+      <div class="footer__col">
+        <h4>Notion for</h4>
+        <a href="#">Enterprise</a>
+        <a href="#">Small business</a>
+        <a href="#">Personal</a>
+        <a href="#" class="footer__explore">Explore more →</a>
+      </div>
+
+    </div><!-- /footer__top -->
+
+    <div class="footer__bottom">
+      <a href="#">Cookie settings</a>
+      <span>© 2026 Notion Labs, Inc.</span>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
